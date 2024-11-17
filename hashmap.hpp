@@ -85,7 +85,7 @@ public:
 template<typename K, typename V, typename Hash>
 void HashMap<K, V, Hash>::insert(const K& key, const V& value) {
     // resize?
-    // we want to keep our load factor low
+    // we want to keep our load factor below the max
     if (float(size_ + 1) / buckets.size() > max_load_factor_) {
         resize(buckets.size() * 2);
     }
